@@ -14,6 +14,11 @@ namespace TechJobs6Persistent.Controllers
 {
     public class EmployerController : Controller
     { 
+        private JobDbContext context;
+        public EmployerController(JobDbContext dbContext)
+        {
+            context=dbContext;
+        }
         // GET: /<controller>/
         [HttpGet]
         public IActionResult Index()
