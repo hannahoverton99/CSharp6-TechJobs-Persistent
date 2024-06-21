@@ -27,11 +27,11 @@ namespace TechJobs6Persistent.Controllers
             return View("Index", employers);
         }
 
-        [HttpGet("add")]
+        [HttpGet("Create")]
         public IActionResult Create()
         {
             AddEmployerViewModel addEmployerViewModel = new ();
-            return View("Add", addEmployerViewModel);
+            return View("Create", addEmployerViewModel);
         }
 
         [HttpPost]
@@ -48,7 +48,7 @@ namespace TechJobs6Persistent.Controllers
             context.SaveChanges();
             return Redirect("/employers");
             }
-            return View("Add", addEmployerViewModel);
+            return View("Create", addEmployerViewModel);
         }
 
         public IActionResult About(int id)
