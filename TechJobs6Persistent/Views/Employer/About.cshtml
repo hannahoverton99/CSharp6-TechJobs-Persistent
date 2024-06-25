@@ -1,13 +1,9 @@
-﻿@using TechJobs6Persistent
+﻿@using TechJobs6Persistent.Models
 @model Employer
 
 @{
+    ViewData["Title"]= "Employer Details";
     ViewData["Controller"]= "Employer";
-    ViewBag.Links = new  Dictionary<string, string>
-        {
-            { "Index", "View All Employers"},
-            { "Create", "Create a new Employer"},
-        };
 }
 
 
