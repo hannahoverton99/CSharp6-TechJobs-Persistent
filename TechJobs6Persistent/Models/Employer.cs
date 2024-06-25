@@ -9,10 +9,11 @@ namespace TechJobs6Persistent.Models
         public List<Job> Jobs {get; set; }
 
 
-        public Employer(string name, string location)
+        public Employer(string name, string location, List<Job> jobs)
         {
             Name = name;
             Location = location;
+            Jobs=jobs;
         }
 
         public Employer()
