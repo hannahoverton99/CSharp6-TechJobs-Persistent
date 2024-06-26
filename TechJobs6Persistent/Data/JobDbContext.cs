@@ -10,8 +10,8 @@ namespace TechJobs6Persistent.Data
 {
 	public class JobDbContext : DbContext
 	{
-        public DbSet<Job>? Jobs { get; set; }
-        public DbSet<Employer>? Employers { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Employer> Employers { get; set; }
         public DbSet<Skill> Skills { get; set; }
 
         public JobDbContext(DbContextOptions<JobDbContext> options)

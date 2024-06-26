@@ -33,10 +33,7 @@ namespace TechJobs6Persistent.Controllers
         public IActionResult Add()
         {
             List<Employer> employers = context.Employers.ToList();
-            AddJobViewModel addJobViewModel = new AddJobViewModel
-            {
-                Employers = employers.Select(e => new SelectListItem { Value = e.Id.ToString(), Text= e.Name }).ToList()
-            };
+            AddJobViewModel addJobViewModel = new AddJobViewModel(employers);
             return View(addJobViewModel);
         }
 
@@ -45,10 +42,12 @@ namespace TechJobs6Persistent.Controllers
         {
             if(ModelState.IsValid)
             {
+                Employer theEmployer=context.Employers.Find(addJobViewModel.SelectedId);
                Job theJob= new Job
                {
                 Name=addJobViewModel.Name,
-                EmployerId=addJobViewModel.SelectedId
+                EmployerId=addJobViewModel.SelectedId,
+                Employer=theEmployer
                };
                context.Jobs.Add(theJob);
                context.SaveChanges();
