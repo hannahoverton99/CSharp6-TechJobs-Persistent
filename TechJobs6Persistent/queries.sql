@@ -15,3 +15,14 @@
 
 --Part 3: Write a query to return a list of the names and descriptions of all skills that are attached to jobs in alphabetical order.
     --If a skill does not have a job listed, it should not be included in the results of this query.
+    
+    -- SELECT SkillName
+    -- FROM skills
+    -- INNER JOIN JobSkills ON Skills.Id=JobSkills.SkillsId
+    -- INNER JOIN Jobs ON JobSkills.JobId=Job.Id
+    -- ORDER BY Jobs.Name;
+    
+
+    
+
+    
